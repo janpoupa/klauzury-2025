@@ -2,17 +2,15 @@
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+    <script src="https://aframe.io/releases/1.7.1/aframe.min.js"></script>
     <script src="https://unpkg.com/aframe-extras@6.1.1/dist/aframe-extras.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-image-aframe.prod.js"></script>
   </head>
   <body>
-    <a-scene bloom="threshold: 1.0; strength: 0.3; radius: 1;" mindar-image="imageTargetSrc: FAV.mind;" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: true" light="defaultLightsEnabled: false" renderer="toneMapping: ACESFilmic">
+    <a-scene bloom="threshold: 1.0; strength: 0.3; radius: 1;" mindar-image="imageTargetSrc: FAV.mind;" vr-mode-ui="enabled: false" renderer="colorManagement: true;" device-orientation-permission-ui="enabled: true" light="defaultLightsEnabled: false">
       <a-assets>
 	      <a-asset-item id="vakuova" src="diagram01_01.glb" animation-mixer></a-asset-item>
         <a-asset-item id="vials" src="vials_01.glb" animation-mixer></a-asset-item>
-        <a-asset-item id="vials_obj" src="vials.obj" animation-mixer></a-asset-item>
-        <a-asset-item id="vials_mtl" src="vials.mtl" animation-mixer></a-asset-item>
       </a-assets>
 
       <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
@@ -22,7 +20,7 @@
       </a-entity>
 
       <a-entity mindar-image-target="targetIndex: 0" animation-mixer>
-        <a-gltf-model rotation="0 0 0" position="0 0 0" scale="0.06 0.06 0.06" src="https://raw.githubusercontent.com/janpoupa/klauzury-2025/refs/heads/main/vials_01.glb" animation-mixer>
+        <a-gltf-model rotation="0 0 0" position="0 0 0" scale="0.06 0.06 0.06" src="#vials" animation-mixer>
       </a-entity>
     </a-scene>
   </body>
