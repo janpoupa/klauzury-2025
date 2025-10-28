@@ -7,7 +7,7 @@
     <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-image-aframe.prod.js"></script>
   </head>
   <body>
-    <a-scene bloom="threshold: 1.0; strength: 0.3; radius: 1;" mindar-image="imageTargetSrc: FAV.mind;" vr-mode-ui="enabled: false" renderer="colorManagement: true;" device-orientation-permission-ui="enabled: true" light="defaultLightsEnabled: false">
+    <a-scene bloom="threshold: 1.0; strength: 0.3; radius: 1;" mindar-image="imageTargetSrc: FAV.mind;" vr-mode-ui="enabled: false" renderer="colorManagement: false; toneMapping: ACESFilmic;" device-orientation-permission-ui="enabled: true" light="defaultLightsEnabled: false">
       <a-assets>
 	      <a-asset-item id="vakuova" src="diagram01_01.glb" animation-mixer></a-asset-item>
         <a-asset-item id="vials" src="vials_01.glb" animation-mixer></a-asset-item>
