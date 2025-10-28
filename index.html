@@ -2,13 +2,14 @@
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <script src="aframe-master.min.js"></script>
+    <script src="https://aframe.io/releases/1.7.1/aframe.min.js"></script>
     <script src="https://unpkg.com/aframe-extras@6.1.1/dist/aframe-extras.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-image-aframe.prod.js"></script>
   </head>
   <body>
     <a-scene mindar-image="imageTargetSrc: FAV2.mind; filterMinCF:0.00001; filterBeta: 10000" color-space="grayscale" renderer="colorManagement: true; toneMapping: ACESFilmic;" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false" light="defaultLightsEnabled: false">
       <a-assets>
+        <a-asset-item id="vakuova" src="diagram01_01.glb"></a-asset-item>
         <a-asset-item id="vials" src="vials_01.glb"></a-asset-item>
       </a-assets>
 
