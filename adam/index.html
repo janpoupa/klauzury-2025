@@ -7,10 +7,10 @@
     <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-image-aframe.prod.js"></script>
   </head>
   <body>
-    <a-scene bloom="threshold: 1.0; strength: 0.3; radius: 1;" mindar-image="imageTargetSrc: FAV.mind;" vr-mode-ui="enabled: false" renderer="colorManagement: true; toneMapping: ACESFilmic;" device-orientation-permission-ui="enabled: true" light="defaultLightsEnabled: false">
+    <a-scene bloom="threshold: 1.0; strength: 0.3; radius: 0.2;" mindar-image="imageTargetSrc: FAV.mind;" vr-mode-ui="enabled: false" renderer="colorManagement: true; toneMapping: ACESFilmic;" device-orientation-permission-ui="enabled: true" light="defaultLightsEnabled: false">
       <a-assets>
 	      <a-asset-item id="vakuova" src="diagram01_01.glb" animation-mixer></a-asset-item>
-        <a-asset-item id="vials" src="vials_02.glb" animation-mixer></a-asset-item>
+        <a-asset-item id="vials" src="vials_04.glb" animation-mixer></a-asset-item>
       </a-assets>
 
       <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
@@ -20,7 +20,7 @@
       </a-entity>
 
       <a-entity mindar-image-target="targetIndex: 0" animation-mixer>
-        <a-gltf-model rotation="0 0 0" position="0 0 0" scale="0.06 0.06 0.06" src="#vials" animation-mixer>
+        <a-gltf-model rotation="0 0 0" position="0 0 0" scale="1 1 1" src="#vials" animation-mixer>
       </a-entity>
     </a-scene>
   </body>
