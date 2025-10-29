@@ -6,15 +6,19 @@
 </head>
 <body>
     <a-scene>
-                <a-plane
+        <a-plane
           rotation="-90 0 0"
           scale="10 10 10" material="shader: shadow; transparent: true; opacity: 0">
         </a-plane>
 
         <a-gltf-model
             src="https://cdn.glitch.global/e8ae677c-5258-4984-ad8d-347b2293a371/xbot.glb"
+            position="0 0 -4"
+            scale="0.4 0.4 0.4"
             animation-mixer>
         </a-gltf-model>
+
+        <a-sky color='#ECECEC'></a-sky>
     </a-scene>
 </body>
 </html>
