@@ -5,7 +5,6 @@
     <script src="https://aframe.io/releases/1.7.1/aframe.min.js"></script>
     <script src="https://unpkg.com/aframe-extras@7.6.0/dist/aframe-extras.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-image-aframe.prod.js"></script>
-    <script src='https://cdn.jsdelivr.net/gh/akbartus/A-Frame-Occlusion-Component/js/occlusion-component.js'></script>
   </head>
   <body>
     <a-scene bloom="threshold: 1.0; strength: 1; radius: 0.2;" mindar-image="imageTargetSrc: FAV4.mind; filterMinCF:0.00001; filterBeta: 10000" color-space="grayscale" renderer="colorManagement: true; toneMapping: ACESFilmic;" vr-mode-ui="enabled: false" ar-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false" light="defaultLightsEnabled: false">
@@ -25,8 +24,15 @@
       </a-entity>
 
       <a-entity mindar-image-target="targetIndex: 1" animation-mixer>
-          <a-entity occlusion-component="occlusionModelUrl: https://cdn.glitch.global/e8ae677c-5258-4984-ad8d-347b2293a371/plane.glb;
-                                      occludedModelUrl: https://cdn.glitch.global/e8ae677c-5258-4984-ad8d-347b2293a371/xbot.glb"></a-entity>
+        <a-plane
+          rotation="-90 0 0"
+          scale="10 10 10" material="shader: shadow; transparent: true; opacity: 0">
+        </a-plane>
+
+        <a-gltf-model
+            src="https://cdn.glitch.global/e8ae677c-5258-4984-ad8d-347b2293a371/xbot.glb"
+            animation-mixer>
+        </a-gltf-model>
       </a-entity>
       
     </a-scene>
