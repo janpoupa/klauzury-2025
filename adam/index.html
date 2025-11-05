@@ -25,19 +25,15 @@
 
       <a-entity mindar-image-target="targetIndex: 0" animation-mixer>
         <a-gltf-model rotation="0 0 0" position="0 0 0" scale="2 2 2" src="#vials" animation-mixer>
-      </a-entity mindar-image-target="targetIndex: 2" animation-mixer>
-          <video
-          id="videoId"
-          muted
-          loop
-          playsinline
-          webkit-playsinline
-        >
+      </a-entity>
+      <a-entity mindar-image-target="targetIndex: 2" animation-mixer>
+          <video id="videoId" muted loop playsinline webkit-playsinline>
           <!-- HEVC video for safari support -->
-          <source src="https://video-src-url/video.mov" type="video/mp4;codecs=hvc1">
+           <!-- <source src="https://video-src-url/video.mov" type="video/mp4;codecs=hvc1"> -->
           <!-- WEBM video for chrome and firefox -->
           <source src="nano_transp.webm" type="video/webm" />
         </video>
+      </a-entity>
     </a-scene>
   </body>
 </html>
