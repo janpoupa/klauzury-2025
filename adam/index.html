@@ -32,12 +32,19 @@
         <a-gltf-model rotation="0 0 0" position="0 0 0" scale="2 2 2" src="#vials" animation-mixer>
       </a-entity>
       <a-entity mindar-image-target="targetIndex: 2" animation-mixer>
-        <a-entity material="shader: transparent-video; src: #videoId"
+        <a-video
+          src="#videoId"
+          autoplay
+          loop="true"
+          transparent="true">
+        </a-video>
+        
+        <!--<a-entity material="shader: transparent-video; src: #videoId"
         geometry="primitive: plane;
-                  width: 1;
-                  height: 1.8"
+                  width: 1.8;
+                  height: 1"
         position="0 1 -2">
-        </a-entity>
+        </a-entity>-->
       </a-entity>
     </a-scene>
   </body>
