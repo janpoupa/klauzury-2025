@@ -7,6 +7,25 @@
     <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-image-aframe.prod.js"></script>
     <!--<script src="https://unpkg.com/aframe-transparent-video-shader@1.0.6/dist/aframe-transparent-video-shader.umd.js"></script>
     <script src="https://unpkg.com/aframe-chromakey-material@1.2.0/dist/aframe-chromakey-material.min.js"></script>-->
+    <script>
+      window.addEventListener('DOMContentLoaded', () => {
+        const vid = document.querySelector('#videoAlpha');
+
+        // Try to autoplay
+        const tryPlay = () => {
+          vid.play().catch(err => {
+            console.log('Autoplay blocked, waiting for user interaction...');
+            window.addEventListener('click', () => vid.play(), { once: true });
+          });
+        };
+
+        if (vid.readyState >= 2) {
+          tryPlay();
+        } else {
+          vid.addEventListener('canplay', tryPlay, { once: true });
+        }
+      });
+  </script>
 </head>
 
   </head>
