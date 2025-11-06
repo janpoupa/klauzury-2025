@@ -26,6 +26,21 @@
         }
       });
   </script>
+  <script>
+  AFRAME.registerComponent('fix-video-alpha', {
+    init: function () {
+      this.el.addEventListener('materialtextureloaded', e => {
+        const mat = this.el.getObject3D('mesh').material;
+        if (mat.map && mat.map instanceof THREE.VideoTexture) {
+          // Disable premultiplied alpha handling
+          mat.premultipliedAlpha = false;
+          mat.map.premultiplyAlpha = false;
+          mat.map.needsUpdate = true;
+        }
+      });
+    }
+  });
+</script>
 </head>
 
   </head>
@@ -64,7 +79,9 @@
           transparent="true"
           width="4"
           height="2.25"
-          position="0 1.5 -3"
+          position="0 0 0"
+          video-texture-updater
+          fix-video-alpha
         >
         </a-plane>
         
