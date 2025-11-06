@@ -6,6 +6,7 @@
     <script src="https://unpkg.com/aframe-extras@7.6.0/dist/aframe-extras.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-image-aframe.prod.js"></script>
     <script src="https://unpkg.com/aframe-transparent-video-shader@1.0.6/dist/aframe-transparent-video-shader.umd.js"></script>
+    <script src="https://unpkg.com/aframe-chromakey-material@1.2.0/dist/aframe-chromakey-material.min.js"></script>
 </head>
 
   </head>
@@ -14,11 +15,10 @@
       <a-assets>
 	      <a-asset-item id="vakuova" src="diagram01_01.glb" animation-mixer></a-asset-item>
         <a-asset-item id="vials" src="vials_04.glb" animation-mixer></a-asset-item>
-        <video id="videoId" muted loop playsinline webkit-playsinline>
+        <video id="videoId"  src="nano_transp.webm" autoplay loop muted playsinline>
           <!-- HEVC video for safari support -->
            <!-- <source src="https://video-src-url/video.mov" type="video/mp4;codecs=hvc1"> -->
           <!-- WEBM video for chrome and firefox -->
-          <source src="nano_transp.webm" type="video/webm" />
         </video>
       </a-assets>
 
@@ -32,11 +32,7 @@
         <a-gltf-model rotation="0 0 0" position="0 0 0" scale="2 2 2" src="#vials" animation-mixer>
       </a-entity>
       <a-entity mindar-image-target="targetIndex: 2" animation-mixer>
-        <a-plane
-          src="#videoId"
-          autoplay
-          loop="true"
-          transparent="true">
+        <a-plane material="shader: chromakey; src: #videoId; color: 0 0 0">
         </a-plane>
         
         <!--<a-entity material="shader: transparent-video; src: #videoId"
